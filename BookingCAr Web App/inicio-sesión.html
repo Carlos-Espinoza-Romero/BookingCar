@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BookingCar | Inicio de Sesión</title>
+<meta name="author" content="Carlos Sergio Espinoza Romero">
+<meta name="description" content="Pagina de inicio.">
+<meta name="keywords" content="BookingCar Inicio">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<link rel="stylesheet" href="./src/output.css">
+</head>
+
+<body class="bg-gray-900 h-screen  place-items-center">
+
+<header>
+
+<!--Logo principal-->
+<div class="w-[230px] h-auto my-15">
+<img src="./contenido/logos/logo-principal/logo-principal-removebg.png" alt="BookingCar">
+</div>
+</header>
+  
+  <!--Formulario (Inicio)-->
+  <section>
+  <div class="bg-gray-800 p-8 rounded-lg w-full max-w-sm shadow-lg">
+    <h2 class="text-2xl font-bold mb-2 text-white">Iniciar Sesión</h2>
+    <p class="text-sm text-gray-400 mb-6">Hola me alegro de verte de nuevo.</p>
+    
+    <!-- Email -->
+    <label for="email" class="text-sm font-medium text-purple-400">Email</label>
+    <input
+      type="email"
+      id="email"
+      placeholder="example@email.com"
+      class="w-full mt-1 mb-4 p-2 bg-transparent border-b border-gray-600 focus:outline-none focus:border-purple-500 placeholder-gray-400 text-sm text-white"/>
+    
+<!--Caja de Contraseña-->
+<label for="password" class="text-sm font-medium text-purple-400">Password</label>
+<div class="relative">
+ 
+ <!--Caja de contraseña-->   
+    <input 
+      type="password" id="password" placeholder="••••••••••" class="w-full mt-1 mb-4 p-2 bg-transparent border-b
+    border-gray-600 focus:outline-none focus:border-purple-500
+    placeholder-gray-400 text-sm text-white">
+      
+    <!-- Ícono de ojo SVG -->
+      <span id="togglePassword" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer select-none">
+      <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+      </svg>
+      </span>
+</div>
+
+
+    <!--Boton "Iniciar Sesión"-->
+    <button type="submit" class="px-8 py-3 mt-10 flex w-full items-center justify-center rounded-md border border-transparent   text-base font-medium text-white bg-purple-700 hover:bg-purple-800 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:outline-hidden">Iniciar Sesión</button>
+
+     <p class="text-sm text-gray-400 my-5 mx-12">o utiliza uno de tus perfiles sociales</p>
+
+     <!--Botones redes sociales-->
+     <div class="flex mx-auto mt-8 justify-center">
+      <img class="rounded-lg mx-5 w-[50px] h-auto" src="./contenido/logos/redes-sociales/logo-x.png" alt="logo-x">
+      <img class=" rounded-lg mx-5 w-[50px] h-auto" src="./contenido/logos/redes-sociales/logo-google.png" alt="logo-google">
+      <img class="rounded-lg mx-5 w-[50px] h-auto" src="./contenido/logos/redes-sociales/logo-facebook.png" alt="logo-facebook">
+     </div>
+     
+     
+
+     <div class="flex mx-auto justify-center mt-2">
+     <button> <p class="text-sm text-gray-400 my-5 mx-10">¿Haz olviado <br> tu contraseña?</p></button>
+
+     <button><p class="text-sm text-purple-400 my-5 mx-10">Regitrarse</p></button>
+     </div>
+
+     
+    </div>
+  </section>
+    <!--Formulario (Fin)-->
+
+
+<!-- Al final del body, antes de cerrar </body> -->
+<script>
+  const passwordInput = document.getElementById('password');
+  const togglePassword = document.getElementById('togglePassword');
+  const eyeIcon = document.getElementById('eyeIcon');
+  let passwordVisible = false;
+
+  togglePassword.addEventListener('click', () => {
+    passwordVisible = !passwordVisible;
+    passwordInput.type = passwordVisible ? 'text' : 'password';
+    // Cambia el ícono del ojo abierto/cerrado
+    eyeIcon.innerHTML = passwordVisible
+      ? `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7a9.956 9.956 0 012.293-3.95m3.25-2.568A9.956 9.956 0 0112 5c4.478 0 8.268 2.943 9.542 7a9.956 9.956 0 01-4.293 5.032M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3l18 18" />`
+      : `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />`;
+  });
+</script>    
+</body>
+
+
+
+</html>
